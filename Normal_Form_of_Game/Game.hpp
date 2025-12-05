@@ -7,36 +7,39 @@
 
 #include <iostream>
 #include "Player.hpp"
+#include <array>
 /*
  *        Rock Paper Scisor
  * Rock    00   10    01
  * Paper   01   00    10
  * Scisor  10   01    00
  */
-static constexpr std::array<std::array<std::string, 3>, 3> table = {{{"00",  "10", "01"},
-                                                       {"01",  "00", "10"},
-                                                       {"01",  "10", "00"}}};
+static constexpr std::array<std::array<std::int8_t, 3>, 3> table = {{
+  {{  0,   -1,    1 }},
+  {{  1,    0,   -1 }},
+  {{ -1,    1,    0 }}
+}};
 class Game {
 
 public:
     std::int8_t get_result(Player& player1,
                            Player& player2)
     {
-        std::string result{table[player1.move()][player2.move()]};
-        if (result == "00")
+        std::int8_t result{table[player1.move()][player2.move()]};
+        if (result == 0)
         {
-            player1.setDidLoose(false);
-            player2.setDidLoose(false);
+            player1.setDidLose(false);
+            player2.setDidLose(false);
             return 0;
         }
-        else if (result == "01") {
-            player1.setDidLoose(true);
-            player2.setDidLoose(false);
+        else if (result == -1) {
+            player1.setDidLose(true);
+            player2.setDidLose(false);
             return -1;
         }
         else {
-            player1.setDidLoose(false);
-            player2.setDidLoose(true);
+            player1.setDidLose(false);
+            player2.setDidLose(true);
             return 1;
         }
     }
