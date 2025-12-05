@@ -1,32 +1,86 @@
-# Prerequisites
-*.d
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+############################
+# CLion / IntelliJ IDEA
+############################
+.idea/
+*.iml
 
-# Compiled Object files
-*.slo
-*.lo
+# CLion default build directories
+cmake-build-*/
+cmake-build-debug*/
+cmake-build-release*/
+
+############################
+# CMake build artefacts
+############################
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+compile_commands.json
+
+# Ninja / Make artifaktları
+*.ninja
+.ninja_deps
+.ninja_log
+
+############################
+# Derleme çıktıları
+############################
+# Nesne dosyaları
 *.o
 *.obj
+*.lo
+*.la
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
+# Kütüphaneler
+*.a
+*.lib
 *.so
+*.so.*
 *.dylib
 *.dll
 
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
+# Çalıştırılabilirler
 *.exe
 *.out
 *.app
+
+############################
+# Test ve geçici dosyalar
+############################
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+
+############################
+# OS özel dosyalar
+############################
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+############################
+# Diğer yaygın klasörler
+############################
+build/
+out/
+bin/
+obj/
