@@ -5,5 +5,4 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(Normal_Form_of_Game main.cpp
         Player.hpp
-        Game.hpp
-        Strategy.hpp)
+        Game.hpp)
